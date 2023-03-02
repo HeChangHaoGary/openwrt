@@ -21,6 +21,7 @@ jobs:
       - name: Check Branch
         id: check-branch
         run: |
+          free -m
           if echo "${{ github.base_ref }}" | grep -q -E 'openwrt-[0-9][0-9]\.[0-9][0-9]'; then
               echo "release-tag=$(echo ${{ github.base_ref }} | sed 's/openwrt-/release\//')" >> $GITHUB_OUTPUT
           fi

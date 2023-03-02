@@ -28,6 +28,7 @@ jobs:
         shell: su buildbot -c "sh -e {0}"
         working-directory: openwrt
         run: |
+          free -m
           touch .config
           echo CONFIG_DEVEL=y >> .config
           echo CONFIG_AUTOREMOVE=y >> .config

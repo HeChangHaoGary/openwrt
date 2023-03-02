@@ -20,6 +20,7 @@ jobs:
         env:
           CI_EVENT_LABEL_NAME: ${{ github.event.label.name }}
         run: |
+          free -m
           echo "$CI_EVENT_LABEL_NAME" | sed -n 's/.*:\(.*\):\(.*\)$/target="\1\/\2"/p' | tee --append $GITHUB_OUTPUT
 
   build_target:

@@ -83,6 +83,7 @@ jobs:
 
       - name: Fix permission
         run: |
+          free -m
           chown -R buildbot:buildbot openwrt
 
       - name: Initialization environment
