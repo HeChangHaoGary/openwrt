@@ -45,6 +45,7 @@ jobs:
       - name: Set lower case owner name
         id: lower_owner
         run: |
+          free -m
           OWNER_LC=$(echo "${{ github.repository_owner }}" \
             | tr '[:upper:]' '[:lower:]')
 
