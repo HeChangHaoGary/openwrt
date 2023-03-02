@@ -32,7 +32,6 @@ jobs:
 
       - name: Setup MacOS
         run: |
-          free -m
           echo "WORKPATH=/Volumes/OpenWrt" >> "$GITHUB_ENV"
           hdiutil create -size 20g -type SPARSE -fs "Case-sensitive HFS+" -volname OpenWrt OpenWrt.sparseimage
           hdiutil attach OpenWrt.sparseimage
